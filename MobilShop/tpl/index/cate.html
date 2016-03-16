@@ -1,0 +1,9 @@
+<form action="#" method="post">
+	<select name="v">
+		{foreach from=$date item=item}
+			{$item['id']}
+			<option selected="{$item['id']}">{$item['id']}</option>
+		{/foreach}
+
+	</select>
+</form>

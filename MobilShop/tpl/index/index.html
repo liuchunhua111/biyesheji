@@ -1,0 +1,61 @@
+
+<style>
+body{
+	width:0 auto;
+	background-color: #CCC;
+}
+.top{
+	height:100px;
+        text-align: center;
+        padding-top: 50px;
+        font-weight: blod;
+        font-size: 20px;
+}
+.top input{
+        height:50px;
+}
+.top input.content{
+         width: 500px;
+}
+.left{
+	width:70%;
+	border: 1px;
+	float: left;
+}
+.right{
+	width:30%;
+	border: 1px;
+	float:right;
+}
+</style>
+<body>
+    <div class="top">
+        <form action="index.php?controller=index&method=index" method="post">
+            文章标题<input type="text" name="keywords" class="content">
+            <input type="submit" value="搜索">
+        </form>
+
+    </div>
+    <div class="conter">
+    <div class="left">
+        <h1>信息区</h1>
+        {if is_array($news)}
+        {foreach from=$news item=item}
+         <a href="index.php?controller=index&method=newshow&id={$item.id}">标题：{$item.title}</a></br>
+        发表时间：{$item.dateline}
+        作者：{$item.author}
+        <hr></br>
+        内容：{$item.content}
+        </br>
+        {/foreach}
+        {else}
+        <p>对不起，没有您要查找的新闻</p>
+        {/if}
+        
+    </div>
+    <div class="right">
+        <p>关于我们</p>
+        {$about}
+    </div>
+    </div>
+</body>

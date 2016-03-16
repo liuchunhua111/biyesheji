@@ -1,0 +1,40 @@
+<style>
+body{
+	width:0 auto;
+	background-color: #CCC;
+}
+.top{
+	height:100px;
+}
+.left{
+	width:70%;
+	border: 1px;
+	float: left;
+}
+.right{
+	width:30%;
+	border: 1px;
+	float:right;
+}
+</style>
+<body>
+	<div class="top">搜索区</div>
+	<div class="conter">
+        <div class="left">
+        	<h1>信息区</h1>
+        	{foreach from=$date item=item}
+        	标题：{$item['title']}</br>
+        	发表时间：{$item.dateline}
+        	作者：{$item.author}
+        	<hr></br>
+        	内容：{$item.content}
+        	</br>
+
+        	{/foreach}
+        </div>
+        <div class="right">
+        	<p>关于我们</p>
+        	{$about}
+        </div>
+	</div>
+</body>
